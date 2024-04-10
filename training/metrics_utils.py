@@ -1,7 +1,4 @@
 import numpy as np
-import tensorflow as tf
-import matplotlib.pyplot as plt
-plt.switch_backend("agg")
 
 
 def predictions_to_scenes(predictions):
@@ -106,6 +103,8 @@ def evaluate_scenes(gt_scenes, pred_scenes, return_mistakes=False, n_frames_miss
 
 
 def graph(data, labels=None, marker=""):
+    import matplotlib.pyplot as plt
+    plt.switch_backend("agg")
     fig = plt.figure(figsize=(6, 6))
 
     plots = []
@@ -138,6 +137,7 @@ def graph(data, labels=None, marker=""):
 
 
 def create_scene_based_summaries(one_hot_pred, one_hot_gt, prefix="test", step=0):
+    import tensorflow as tf
     thresholds = np.array([
         0.02, 0.06, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9
     ])

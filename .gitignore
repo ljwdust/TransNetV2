@@ -4,3 +4,7 @@
 *.pickle
 .idea
 .ipynb_checkpoints
+
+results
+consolidated
+__pycache__
